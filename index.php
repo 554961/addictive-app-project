@@ -1,3 +1,11 @@
+<?php
+// link config files
+require_once 'database_code/config.php';
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,6 @@
     <title>Welcome</title>
 </head>
 <body>
-    Pull request test
+    Welcome
 </body>
 </html>
