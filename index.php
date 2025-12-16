@@ -129,5 +129,3 @@ require_once 'components/navbar.php';
 
 </body>
 </html>
-</html>
-
