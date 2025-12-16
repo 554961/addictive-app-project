@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,11 +125,10 @@
 
         <div class="ft-bottom">
             <p>
-            © 2025 'Santas Addicts'. All rights reserved.
+            © 2025 Example Site. All rights reserved.
             <span class="ft-festive">🎄 Play responsibly and enjoy the festive season 🎄</span>
             </p>
         </div>
     </footer>
 </body>
 </html>
->>>>>>> Stashed changes
