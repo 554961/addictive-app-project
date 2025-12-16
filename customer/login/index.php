@@ -1,4 +1,4 @@
-<?php include("navbar.php"); ?>
+<?php include __DIR__ . '/../../components/navbar.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,4 +8,3 @@
     <title>Customer Login</title>
     <link rel="stylesheet" href="../../css/customer/login.css">
 
-    

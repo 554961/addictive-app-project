@@ -31,6 +31,8 @@ include __DIR__ . '/../components/navbar.php';
             padding: 28px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.35);
             border: 4px solid rgba(2, 80, 2, 0.12);
+            position: relative; /* needed for drips */
+            overflow: visible; /* allow drips to extend outside */
         }
 
         h1 {
@@ -84,7 +86,118 @@ include __DIR__ . '/../components/navbar.php';
             .policy-container { margin: 100px 12px; padding: 18px; }
             .snowflake { font-size: 12px; }
         }
+
+        /* ========== Dripping snowy border ========== */
+        /* small decorative droplets that form along the top border and drip down */
+        .snow-drip {
+            position: absolute;
+            top: -6px; /* start slightly above the border */
+            width: 10px;
+            height: 16px;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 35%, #fff 0%, #f0f8ff 40%, transparent 60%);
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+            transform-origin: top center;
+            opacity: 0.98;
+            animation-name: drip-fall;
+            animation-timing-function: cubic-bezier(.2,.9,.26,1);
+        }
+
+        @keyframes drip-fall {
+            0% { transform: translateY(0) scaleY(1); opacity: 1; }
+            70% { transform: translateY(var(--drip-length, 60px)) scaleY(0.85); opacity: 0.9; }
+            100% { transform: translateY(calc(var(--drip-length, 60px) + 10px)) scaleY(0.75); opacity: 0; }
+        }
+
+        /* Slight wobble while falling for realism */
+        .snow-drip.wobble { animation-name: drip-fall, drip-sway; animation-duration: var(--drip-duration, 4s), 1.2s; animation-iteration-count: 1, infinite; animation-fill-mode: forwards; }
+        @keyframes drip-sway {
+            0%   { transform: translateX(0); }
+            50%  { transform: translateX(6px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Drips that originate from buttons */
+        .btn-drip {
+            position: absolute;
+            bottom: -6px;
+            width: 6px;
+            height: 10px;
+            background: linear-gradient(#fff, #eaf6ff);
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+            transform-origin: top center;
+            animation: btn-drip 1.6s ease-in forwards;
+            pointer-events: none;
+        }
+
+        @keyframes btn-drip {
+            0% { transform: translateY(0) scaleY(1); opacity: 1; }
+            80% { transform: translateY(18px) scaleY(0.8); opacity: 0.8; }
+            100%{ transform: translateY(28px) scaleY(0.65); opacity: 0; }
+        }
+
+        /* Ensure clickable elements can show drips */
+        button, .btn, a.button, input[type="submit"] { position: relative; overflow: visible; }
+
+        /* Small accessibility-friendly reduction on reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .snow-drip, .btn-drip { animation: none; opacity: 0.9; }
+        }
+
     </style>
+
+    <!-- Add the JavaScript that creates drips dynamically -->
+    <script>
+        // Create and animate drips on the policy container and on buttons
+        document.addEventListener('DOMContentLoaded', function(){
+            const container = document.querySelector('.policy-container');
+            if (!container) return;
+
+            function makeDrip(parent, leftPct, len, duration, wobble){
+                const d = document.createElement('div');
+                d.className = 'snow-drip' + (wobble ? ' wobble' : '');
+                d.style.left = leftPct + '%';
+                d.style.setProperty('--drip-length', Math.round(len) + 'px');
+                d.style.setProperty('--drip-duration', (duration || 4) + 's');
+                d.style.animationDuration = (duration || 4) + 's';
+                parent.appendChild(d);
+                d.addEventListener('animationend', function(){ d.remove(); });
+                // remove after a safety timeout in case animationend doesn't fire
+                setTimeout(()=> d.remove(), (duration || 4) * 1000 + 500);
+                return d;
+            }
+
+            // initial decorative drips along top border
+            for (let i = 0; i < 9; i++){
+                const left = 4 + Math.random() * 92; // avoid edges
+                makeDrip(container, left, 40 + Math.random() * 90, 3 + Math.random() * 4, Math.random() > 0.5);
+            }
+
+            // occasional random drips every 1-2 seconds
+            setInterval(function(){
+                const left = 4 + Math.random() * 92;
+                makeDrip(container, left, 30 + Math.random() * 110, 3 + Math.random() * 5, Math.random() > 0.6);
+            }, 1400 + Math.random() * 900);
+
+            // Add drips to buttons on hover
+            function spawnButtonDrip(btn){
+                const bd = document.createElement('div');
+                bd.className = 'btn-drip';
+                const left = 10 + Math.random() * 80;
+                bd.style.left = left + '%';
+                btn.appendChild(bd);
+                bd.addEventListener('animationend', function(){ bd.remove(); });
+                setTimeout(()=> bd.remove(), 2000);
+            }
+
+            const buttons = document.querySelectorAll('button, .btn, a.button, input[type="submit"]');
+            buttons.forEach(b => {
+                b.addEventListener('mouseenter', function(){ spawnButtonDrip(b); });
+            });
+        });
+    </script>
 </head>
 <body>
 
