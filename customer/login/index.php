@@ -1,12 +1,45 @@
 <?php
-    // someone deleted the navbar and config files; waiting for a fix. for now, commented
     include __DIR__ . '/../../database_code/config.php';
     include __DIR__ . '/../../components/navbar.php'; 
-    session_start();
+    // session_start(); // Not needed 
     $registered = false; // test var - replace with own logic
     $error = ''; // test var - replace with own logic
 
-    // no functionality yet
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $qry = "SELECT password_hash FROM users WHERE username = '$username'";
+
+    $result = mysqli_query($connection, $qry);
+
+    $row = mysqli_fetch_assoc($result);
+
+    // if password has no hash
+    if ($row["password_hash"] == $password)
+    {
+        echo "password correct"; 
+        session_start();
+
+        $_SESSION["loggedIn"] = true;
+        $_SESSION["username"] = $username;
+        header("location: ../../index.php?loggedIn=SUCCESS");
+    } 
+    else echo "password wrong";
+            
+    
+    //check hash
+    if (password_verify($password, $row["password_hash"]))
+    {
+        echo "hash Password is correct";
+        $_SESSION["loggedIn"] = true;
+        $_SESSION["username"] = $username;
+        header("location: ../../index.php?loggedIn=SUCCESS");
+    }
+    else echo " or hash password wrong";
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +121,7 @@
     <div class="content-container">
         <div class="yellow-border-box">
             <h1 style="font-size: 36px">Log In</h1>
-            <h3>Hurry! Log in by <?php echo date("d/m/Y", strtotime("+1 week")); ?> to claim 50 free Roulette spins!</h3>
+            <h3>Hurry! Log in by <?php echo date("d/m/Y", strtotime("+1 week")); ?> to claim 50 free gallons of Milk!</h3>
 
             <?php if ($registered) { ?>
                 <!-- if the user was referred from the registration page, then say they succeeded and tell them to log in -->
