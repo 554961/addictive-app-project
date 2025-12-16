@@ -1,9 +1,9 @@
 <?php
-// include __DIR__ . '/components/navbar.php';
+
 // link config files && link page templates
 require_once 'database_code/config.php';
 require_once 'components/navbar.php';
-require_once 'components/footer.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -126,6 +126,8 @@ require_once 'components/footer.php';
     </div>
 
 </div>
+<!-- Include footer here -->
+<?php require_once 'components/footer.php'; ?>
 
 </body>
 </html>
