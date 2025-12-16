@@ -114,52 +114,52 @@
 </head>
 <body>
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">    
-                        <div class="wrapper">
-                            <h2>Sign Up</h2>
-                            <p>Please fill out this from to create an account.</p>
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" name="username" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
-                                    <span class="invalid-feedback"><?php echo $name_err; ?></span>
-                                </div>
+        <div class="wrapper">
+            <h2>Sign Up</h2>
+            <p>Please fill out this from to create an account.</p>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="username" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
+                    <span class="invalid-feedback"><?php echo $name_err; ?></span>
+                </div>
 
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="text" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
-                                    <span class="invalid-feedback"><?php echo $email_err; ?></span>
-                                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                    <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                </div>
 
-                                <div class="form-group">
-                                    <label>Phone Number</label>
-                                    <input type="text" name="phone" class="form-control <?php echo (!empty($phone_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone; ?>">
-                                    <span class="invalid-feedback"><?php echo $phone_err; ?></span>
-                                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" class="form-control <?php echo (!empty($phone_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone; ?>">
+                    <span class="invalid-feedback"><?php echo $phone_err; ?></span>
+                </div>
 
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                </div>
 
-                                <div class="form-group">
-                                    <label>Confirm Password</label>
-                                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo htmlspecialchars($confirm_password); ?>">
-                                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-                                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo htmlspecialchars($confirm_password); ?>">
+                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                </div>
 
-                                <br>
+                <br>
 
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary" value="Submit">
-                                    <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-                                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+                </div>
 
-                                <p>Already have an account? <a href="login.php">Login here</a></p>
+                <p>Already have an account? <a href="login.php">Login here</a></p>
 
-                                <a href="index.html" class="btn btn-warning">Return</a>
-                            </form>
-                        </div>
-                    </div>
+                <a href="index.html" class="btn btn-warning">Return</a>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
