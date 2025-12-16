@@ -1,9 +1,8 @@
 <?php
-// link config files
+// link config files && link page templates
 require_once 'database_code/config.php';
-
-
-
+require_once 'components/navbar.php';
+require_once 'components/footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +13,8 @@ require_once 'database_code/config.php';
     <title>Welcome</title>
 </head>
 <body>
-    Welcome
+
 </body>
 </html>
+
+
