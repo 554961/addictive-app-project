@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <style>
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(180deg, #993a3a, #991a1aff);
+      box-shadow: 0 2px 5px rgba(192, 19, 19, 0.9);
+      z-index: 1000;
+    }
 
-    <style>
-        .navbar {
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            height: 80px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(143, 35, 35, 1);
-            box-shadow: 0 2px 5px rgba(192, 19, 19, 1);
-            z-index: 1000;
-            justify-content: space-between;
-        }
+    .nav-actions {
+      display: flex;
+      gap: 20px;
+      margin-right: 30px;
+    }
 
         .nav-left, .nav-right { display: flex; align-items: center; }
         .nav-left a, .nav-right a { margin-right: 12px; }
@@ -54,6 +59,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-left">

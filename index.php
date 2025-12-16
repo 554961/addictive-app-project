@@ -1,5 +1,9 @@
 <?php
-include __DIR__ . '/components/navbar.php';
+// include __DIR__ . '/components/navbar.php';
+// link config files && link page templates
+require_once 'database_code/config.php';
+require_once 'components/navbar.php';
+require_once 'components/footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +14,8 @@ include __DIR__ . '/components/navbar.php';
     <title>Welcome</title>
 </head>
 <body>
-    Pull request test
+
 </body>
 </html>
+
+
