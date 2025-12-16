@@ -1,7 +1,7 @@
-# 🎄 Christmas Casino
+# 🎄 Christmas Fun App
 *Trello board https://trello.com/b/Ml3cY7Nd/year-2-christmas-group-project-addictive-fun-app*
 
-> **A festive, Christmas-themed gambling website built collaboratively** 🎅🎲
+> **A festive, Christmas-themed addictive website built collaboratively** 🎅🎲
 
 Welcome to **Christmas Casino**, a holiday-inspired web application where users can play classic casino-style games with a cozy Christmas twist. This project is a **group collaboration** created as part of our class coursework and is designed to showcase teamwork, front-end/back-end skills, and creative design — all wrapped in holiday cheer!
 
@@ -9,7 +9,7 @@ Welcome to **Christmas Casino**, a holiday-inspired web application where users 
 
 ## ✨ Project Overview
 
-Christmas Casino brings the excitement of gambling-style games into a **safe, educational environment**. No real money is used — players gamble with **virtual currency (milk & cookies)** while enjoying snowy visuals, festive music, and seasonal animations.
+Christmas Casino brings the excitement of addictive-style games into a **safe, educational environment**. No real money is used — players with **virtual currency (milk & cookies)** while enjoying snowy visuals, festive music, and seasonal animations.
 
 🎁 **Key Goals:**
 
@@ -27,7 +27,7 @@ Christmas Casino brings the excitement of gambling-style games into a **safe, ed
   * Slot machines
   * Dice / roulette / card-style games
 * 🎄 Festive UI with snow, lights, and holiday colors
-* 💰 Milk & Cookies Virtual currency system (no real gambling)
+* 💰 Milk & Cookies Virtual currency system 
 * 🧑‍🤝‍🧑 Multiplayer or leaderboard features
 * 🔊 Sound effects & music
 * 📱 Responsive design for desktop & mobile
@@ -95,7 +95,7 @@ To keep everything running smoothly:
 
 ## ⚠️ Disclaimer
 
-🚨 **This project does NOT involve real money gambling.**
+🚨 **This project does NOT involve real money.**
 
 All games use **virtual currency only** and are created strictly for **educational purposes**.
 
