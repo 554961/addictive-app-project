@@ -4,6 +4,10 @@
 require_once 'database_code/config.php';
 require_once 'components/navbar.php';
 
+session_start();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +34,20 @@ require_once 'components/navbar.php';
 ">
     <div style="font-weight:bold;">🎅 SANTA'S CASINO</div>
     <div>
+        <?php
+        // If not logged in, then display these buttons
+        if (!$_SESSION["loggedIn"]) {
+        ?>
         <button style="margin-right:10px;">Login</button>
         <button style="background:#2ecc71;color:#000;">Free Bonus</button>
+        <?php 
+        // else display these
+        } 
+        // the user is logged in
+        else { ?>
+        <button style="margin-right:10px;">Welcome <strong><?php echo htmlspecialchars($_SESSION["username"]); ?> </strong></button>
+        <button style="background:#2ecc71;color:#000;">Your Profile</button>
+        <?php } ?>
     </div>
 </div>
 
