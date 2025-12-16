@@ -100,7 +100,7 @@
                 <p><?php echo $error; ?></p>
             <?php } ?>
 
-            <form method="post" action="login.php">
+            <form method="post" action="index.php">
                 <p style="font-size: 18px;">
                     <label>Username:</label><br>
                     <!-- inputs can use some styling, basic as-is -->
