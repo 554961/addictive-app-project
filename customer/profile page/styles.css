@@ -1,0 +1,51 @@
+.profile-container {
+    padding: 40px;
+    color: #fff;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #8b0000, #006400);
+    padding: 30px;
+    border-radius: 16px;
+    border: 2px solid gold;
+    margin-bottom: 30px;
+}
+
+.profile-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.profile-card {
+    background: linear-gradient(135deg, #b22222, #228b22);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid gold;
+    text-align: center;
+}
+
+.profile-form {
+    background: rgba(0,0,0,0.4);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid gold;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.profile-form button {
+    background: linear-gradient(90deg, red, green);
+    color: white;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
