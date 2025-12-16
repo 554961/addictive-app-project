@@ -1,10 +1,8 @@
 <?php
-<<<<<<< Updated upstream
-=======
+
 // link config files && link page templates
 require_once 'database_code/config.php';
 require_once 'components/navbar.php';
->>>>>>> Stashed changes
 
 ?>
 
@@ -130,9 +128,6 @@ require_once 'components/navbar.php';
 </div>
 
 </body>
-<<<<<<< Updated upstream
 </html>
-=======
 </html>
 
->>>>>>> Stashed changes
