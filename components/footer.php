@@ -125,7 +125,7 @@
 
         <div class="ft-bottom">
             <p>
-            © 2025 Example Site. All rights reserved.
+            © 2025 Santa's Addicts. All rights reserved.
             <span class="ft-festive">🎄 Play responsibly and enjoy the festive season 🎄</span>
             </p>
         </div>
