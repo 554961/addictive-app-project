@@ -11,54 +11,61 @@ include '../components/navbar.php';
 </head>
 
 <body class="contact-page">
-<div class="snow"></div>
 
-<div class="contact-wrapper">
+<!-- FIX: offset for fixed navbar -->
+<div style="padding-top: 80px; min-height: calc(100vh - 80px); display: flex; flex-direction: column;">
 
-  <div class="header">
-    <h1>🎅 Contact Santa’s Casino 🎄</h1>
-    <p>Santa and his elves are here to help 24/7</p>
-  </div>
+  <div class="snow"></div>
 
-  <div class="content">
+  <div class="contact-wrapper" style="flex: 1;">
 
-    <div class="info">
-      <h2>Get in Touch</h2>
-      <p>Questions about your account, bonuses, or festive games?</p>
-      <p><strong>Email:</strong> support@santascasino.co.uk</p>
-      <p><strong>Live Chat:</strong> Available 24/7</p>
-
-      <div class="note">
-        <strong>🎄 Gamble Responsibly</strong><br>
-        Santa’s Casino is for players aged 18+. Please gamble responsibly.
-      </div>
+    <div class="header">
+      <h1>🎅 Contact Santa’s Casino 🎄</h1>
+      <p>Santa and his elves are here to help 24/7</p>
     </div>
 
-    <form action="contact_handler.php" method="post">
-      <h2>Send Santa a Message</h2>
+    <div class="content">
 
-      <label>Full Name</label>
-      <input type="text" name="name" required>
+      <div class="info">
+        <h2>Get in Touch</h2>
+        <p>Questions about your account, bonuses, or festive games?</p>
+        <p><strong>Email:</strong> support@santascasino.co.uk</p>
+        <p><strong>Live Chat:</strong> Available 24/7</p>
 
-      <label>Email Address</label>
-      <input type="email" name="email" required>
+        <div class="note">
+          <strong>🎄 Gamble Responsibly</strong><br>
+          Santa’s Casino is for players aged 18+. Please gamble responsibly.
+        </div>
+      </div>
 
-      <label>Subject</label>
-      <input type="text" name="subject" required>
+      <form action="contact_handler.php" method="post">
+        <h2>Send Santa a Message</h2>
 
-      <label>Message</label>
-      <textarea name="message" required></textarea>
+        <label>Full Name</label>
+        <input type="text" name="name" required>
 
-      <button type="submit">🎁 Send Message</button>
-    </form>
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+
+        <label>Subject</label>
+        <input type="text" name="subject" required>
+
+        <label>Message</label>
+        <textarea name="message" required></textarea>
+
+        <button type="submit">🎁 Send Message</button>
+      </form>
+
+    </div>
+
+    <div class="footer">
+      © 2025 <strong>Santa’s Casino</strong> | 18+ | Play responsibly
+    </div>
 
   </div>
 
-  <div class="footer">
-    © 2025 <strong>Santa’s Casino</strong> | 18+ | Play responsibly
-  </div>
+  <?php include '../components/footer.php'; ?>
 
 </div>
-
 </body>
 </html>
