@@ -13,7 +13,7 @@ session_start();
     <div>
         <?php
         // If not logged in, then display these buttons
-        if (!$_SESSION["loggedIn"]) {
+        if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]) {
         ?>
         <button style="margin-right:10px;">Login</button>
         <button style="background:#2ecc71;color:#000;">Free Bonus</button>
