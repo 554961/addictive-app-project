@@ -173,8 +173,8 @@
 <body style="font-family: Arial, sans-serif">
     <div class="content-container">
         <div class="yellow-border-box">
-            <h1 style="font-size: 36px"><b>Log In</b></h1>
-            <h3><u>Hurry!</u> Log in by <b><?php echo date("d/m/Y", strtotime("+1 week")); ?></b> to claim 50 free gallons of milk!</h3>
+            <h1 style="font-size: 36px">Log In</h1>
+            <h3>Hurry! Log in by <?php echo date("d/m/Y", strtotime("+1 week")); ?> to claim 50 free gallons of Milk!</h3>
 
             <?php if ($registered) { ?>
                 <!-- if the user was referred from the registration page, then say they succeeded and tell them to log in -->

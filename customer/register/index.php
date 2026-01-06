@@ -1,5 +1,10 @@
 <?php
-    require_once "config.php";
+// 
+//      This file still contains errors
+// 
+    //include config & templates
+    include __DIR__ . '/../../database_code/config.php';
+    include __DIR__ . '/../../components/navbar.php'; 
 
     $username = $password = $confirm_password = $email = '';
     $username_err = $password_err = $confirm_password_err = $email_err = '';
